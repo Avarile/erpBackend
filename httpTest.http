@@ -1,0 +1,33 @@
+#### Create User
+POST http://localhost:3000/users/signup
+Content-Type: application/json
+
+{
+  "name": "Sparutus",
+  "password": "123345456asd",
+  "authLevel": "operator"
+}
+
+
+#### find All Users
+GET http://localhost:3000/users/findall
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU3BhcnV0dXMiLCJpZCI6NSwiYXV0aExldmVsIjoib3BlcmF0b3IiLCJpYXQiOjE2NTUwMDc4OTN9.yFqXmxvbHXYMb6ZDFMlMQe5L82lBVwqwILRMr2X5gc
+
+
+#### find specific Users
+GET http://localhost:3000/users/findbyname?name=Avarile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU3BhcnV0dXMiLCJpZCI6NSwiYXV0aExldmVsIjoib3BlcmF0b3IiLCJpYXQiOjE2NTUwMDgzMDF9.Zua6WsvxSVJSssZOz7bCfYQFs33axOYPggo5NbBAO
+
+#### find specific Users
+GET http://localhost:3000/users/findbyparams?password=123345456asd
+
+
+#### 
+
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+  "name": "Sparutus",
+  "password": "123345456asd"
+}

@@ -26,6 +26,12 @@ import { ProductEntity } from './products/entities/product.entity';
     ProductsModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    // {
+    //   // provide: APP_INTERCEPTOR,
+    //   // useClass: AuthInterceptor,
+    // },
+  ],
 })
 export class AppModule {}

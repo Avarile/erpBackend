@@ -89,3 +89,43 @@ import { UserEntity } from './users/entities/user.entity';
 export class AppModule {}
 
 ```
+
+4. Implementing the Global Piping(Global validation)
+
+- main.ts:
+
+```
+  import { ValidationPipe } from '@nestjs/common';
+  import { NestFactory } from '@nestjs/core';
+  import { AppModule } from './app.module';
+
+
+async function bootstrap() {
+const app = await NestFactory.create(AppModule);
+app.useGlobalPipes(
+new ValidationPipe({
+whitelist: true,
+}),
+);
+await app.listen(3000);
+}
+bootstrap();
+
+```
+
+- implement the dtos:
+  - setup the dto and import it into the controller to validate the data from incoming request body.
+
+```
+  @Post('/signup')
+  create(@Body() createUserDto: CreateUserDto) {
+    return this.usersService.create(createUserDto);
+  }
+```
+
+5. Implement the service(to utilize the repo)
+
+6. Then use service to implement business logics in Controller.
+
+7. Query the data
+   - 
